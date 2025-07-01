@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-node-app2-service
+  creationTimestamp: null
+  name: test-app2-service
 spec:
-  type: LoadBalancer
-  selector:
-    app: my-node-app2
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 3000
+      protocol: TCP
+  selector:
+    app: test-app2
+  type: LoadBalancer
+status:
+  loadBalancer: {}

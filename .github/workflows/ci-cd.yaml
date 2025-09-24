@@ -47,7 +47,7 @@ jobs:
         env:
           IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/my-node-app:latest
         run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          ssh -i ~/.ssh/id_ed25519 ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << EOF
             set -e
             docker pull $IMAGE
             docker stop my-node-app || true

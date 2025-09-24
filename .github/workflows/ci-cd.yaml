@@ -2,7 +2,7 @@ name: CI/CD Node App with Docker on Amazon Linux 2023
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -53,4 +53,3 @@ jobs:
             docker stop my-node-app || true
             docker rm my-node-app || true
             docker run -d --name my-node-app -p 80:3000 --restart always $IMAGE
-EOF
